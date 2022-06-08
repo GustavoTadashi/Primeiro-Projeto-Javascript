@@ -1,12 +1,22 @@
 var currentNumberWrapper = document.getElementById('currentNumber');
 var currentNumber = 0;
 
+function verifyNumber() {
+    if( currentNumber < 0 ){
+        currentNumberWrapper.classList.add('numeroNegativo');
+    } else {
+        currentNumberWrapper.classList.remove('numeroNegativo');
+    }
+}
+
 function increment() {
-    currentNumber++
+    currentNumber++;
+    verifyNumber();
     currentNumberWrapper.innerHTML = currentNumber;
 }
 
 function decrement() {
-    currentNumber--
+    currentNumber--;
+    verifyNumber();
     currentNumberWrapper.innerHTML = currentNumber;
 }
